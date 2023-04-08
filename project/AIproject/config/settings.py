@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-b$0-v1l%wvx@s%y%jn2+_v7(a@4uzmwn6%hw)%k#b4m!1^31z@"
+SECRET_KEY = "django-insecure-z%rdd_l38q-ejhv5=ahnz(uda@9bx_z%l2i2lp)md^-@d7@0z2"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,12 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    #Local
-    "accounts",#NEW
+    #LOCAl
+    'accounts', #NEW
 ]
 
-#NEW MODEL
-AUTH_USER_MODEL = 'accounts.CustomUser' # NEW
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -83,9 +82,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'kM9T3VYzrsvYZ4svbZYQ',
-        'HOST': 'containers-us-west-41.railway.app',
-        'PORT': '7742'
+        'PASSWORD': 'vUEbe5URPLt5bZ1EUCvi',
+        'HOST': 'containers-us-west-200.railway.app',
+        'PORT': '6123'
     }
 }
 
@@ -130,3 +129,4 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+CSRF_TRUSTED_ORIGINS= ["https://colina83-probable-space-fishstick-r4v5grwv7q2w5j4-8080.preview.app.github.dev"]
