@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-kehdn4zuwrdetyma4+7)5@gv0)gesu_vq-g$he0olbihp(wb&h"
+SECRET_KEY = "django-insecure-b$0-v1l%wvx@s%y%jn2+_v7(a@4uzmwn6%hw)%k#b4m!1^31z@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "pages" # NEW APP
 ]
 
 MIDDLEWARE = [
@@ -76,8 +75,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'kM9T3VYzrsvYZ4svbZYQ',
+        'HOST': 'containers-us-west-41.railway.app',
+        'PORT': '7742'
     }
 }
 
