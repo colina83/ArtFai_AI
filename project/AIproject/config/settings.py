@@ -56,6 +56,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "config.urls"
 
+STATIC_URL = '/static/'
+STATIC_DIRS = str(BASE_DIR.joinpath('static'))
+STATIC_ROOT = (str(BASE_DIR.joinpath('staticfiles')))
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
