@@ -11,11 +11,6 @@ def homepage(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             query = form.cleaned_data['main_search']
-            
-
-
-
-            
             return render(request, template_name, {'form': form, 'query': query})        
         else:
             return render(request, template_name, {'form': form})
