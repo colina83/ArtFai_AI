@@ -9,11 +9,16 @@
     <h1>ArtFai</h1>
     <div class="container">
       <div class="input-group">
-        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-        <button type="button" class="btn btn-outline-primary">search</button>
+        <form action="" method="post">
+          {% csrf_token %}
+          {{ form }}
+          <input type="submit" value="Submit">
+        </form>
       </div>
     </div>
   </div>
+
+  
 
   &nbsp;
   <div class="card-container">
