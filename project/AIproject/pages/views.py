@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from .forms import SearchForm
 from django.views.decorators.csrf import csrf_exempt
+from .functions import *
 # Create your views here.
 
 @csrf_exempt
@@ -11,7 +12,11 @@ def homepage(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             query = form.cleaned_data['main_search']
-            return render(request, template_name, {'form': form, 'query': query})        
+            url = create_url(query)
+            df = results_provenance(url)
+            table_html = df.to_html()
+            return render(request, template_name, {'form': form, 'query': query, 'table_html': table_html})
+                   
         else:
             return render(request, template_name, {'form': form})
 
